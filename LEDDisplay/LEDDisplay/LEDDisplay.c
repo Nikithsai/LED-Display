@@ -1,0 +1,1425 @@
+#include <avr/io.h>
+#include <avr/sfr_defs.h>
+#include <util/delay.h>
+//#include "USART_32.h"
+// Here PINC0,1,2,3,4,5 are connected to 1st,2nd,3rd,4th,5th,6th row of the display which should be active high '+' .
+// Here PINB0,1,2 are connected to the x,y,z of the decoder. which should be active high.
+int i;
+void alphaA()
+{
+	for(i=0;i<180;i++)
+	{
+		PORTB=0x00;
+		PORTC = 0b00111000;
+		_delay_ms(2);
+		PORTB++;
+		PORTC = 0b00001100;
+		_delay_ms(2);
+		PORTB++;
+		PORTC = 0b00001010;
+		_delay_ms(2);
+		PORTB++;
+		PORTC = 0b00001001;
+		_delay_ms(2);
+		PORTB++;
+		PORTC = 0b00001010;
+		_delay_ms(2);
+		PORTB++;
+		PORTC = 0b00001100;
+		_delay_ms(2);
+		PORTB++;
+		PORTC = 0b00111000;
+		_delay_ms(2);
+		PORTB++;
+		PORTC=0b00000000;
+		_delay_ms(2);
+	}
+}
+void alphaB()
+{
+	for(i=0;i<180;i++)
+	{
+		PORTB=0x00;
+		PORTC=0b00000000;
+		_delay_ms(2);
+		PORTB++;
+		PORTC=0b11111111;
+		_delay_ms(2);
+		PORTB++;
+		PORTC=0b00100101;
+		_delay_ms(2);
+		PORTB++;
+		PORTC=0b00100101;
+		_delay_ms(2);
+		PORTB++;
+		PORTC=0b00100101;
+		_delay_ms(2);
+		PORTB++;
+		PORTC=0b00011010;
+		_delay_ms(2);
+		PORTB++;
+		PORTC=0b00000000;
+		_delay_ms(2);
+		PORTB++;
+		PORTC=0b00000000;
+		_delay_ms(2);
+	}
+}
+void alphaC()
+{
+	for(i=0;i<180;i++)
+	{
+		PORTB=0x00;
+		PORTC=0b00000000;
+		_delay_ms(2);
+		PORTB++;
+		PORTC=0b00011110;
+		_delay_ms(2);
+		PORTB++;
+		PORTC=0b00100001;
+		_delay_ms(2);
+		PORTB++;
+		PORTC=0b00100001;
+		_delay_ms(2);
+		PORTB++;
+		PORTC=0b00100001;
+		_delay_ms(2);
+		PORTB++;
+		PORTC=0b00100001;
+		_delay_ms(2);
+		PORTB++;
+		PORTC=0b00000000;
+		_delay_ms(2);
+		PORTB++;
+		PORTC=0b00000000;
+		_delay_ms(2);
+	}
+}
+
+void alphaD()
+{
+	for(i=0;i<180;i++)
+	{
+		PORTB=0x00;
+		PORTC=0b00000000;
+		_delay_ms(2);
+		PORTB++;
+		PORTC=0b11111111;
+		_delay_ms(2);
+		PORTB++;
+		PORTC=0b00100001;
+		_delay_ms(2);
+		PORTB++;
+		PORTC=0b00100001;
+		_delay_ms(2);
+		PORTB++;
+		PORTC=0b00100001;
+		_delay_ms(2);
+		PORTB++;
+		PORTC=0b00010010;
+		_delay_ms(2);
+		PORTB++;
+		PORTC=0b00001100;
+		_delay_ms(2);
+		PORTB++;
+		PORTC=0b00000000;
+		_delay_ms(2);
+	}
+
+}
+void alphaE()
+{
+	for(i=0;i<180;i++)
+	{
+		PORTB=0x00;
+		PORTC=0b00000000;
+		_delay_ms(2);
+		PORTB++;
+		PORTC=0b00111111;
+		_delay_ms(2);
+		PORTB++;
+		PORTC=0b00100101;
+		_delay_ms(2);
+		PORTB++;
+		PORTC=0b00100101;
+		_delay_ms(2);
+		PORTB++;
+		PORTC=0b00100101;
+		_delay_ms(2);
+		PORTB++;
+		PORTC=0b00100101;
+		_delay_ms(2);
+		PORTB++;
+		PORTC=0b00000000;
+		_delay_ms(2);
+		PORTB++;
+		PORTC=0b00000000;
+		_delay_ms(2);
+	}
+}
+void alphaF()
+{
+	for(i=0;i<180;i++)
+	{
+		PORTB=0x00;
+		PORTC=0b00000000;
+		_delay_ms(2);
+		PORTB++;
+		PORTC=0b00111111;
+		_delay_ms(2);
+		PORTB++;
+		PORTC=0b00000101;
+		_delay_ms(2);
+		PORTB++;
+		PORTC=0b00000101;
+		_delay_ms(2);
+		PORTB++;
+		PORTC=0b00000101;
+		_delay_ms(2);
+		PORTB++;
+		PORTC=0b00000101;
+		_delay_ms(2);
+		PORTB++;
+		PORTC=0b00000000;
+		_delay_ms(2);
+		PORTB++;
+		PORTC=0b00000000;
+		_delay_ms(2);
+	}
+}
+void alphaG()
+{
+	for(i=0;i<180;i++)
+	{
+		PORTB=0x00;
+		PORTC=0b00000000;
+		_delay_ms(2);
+		PORTB++;
+		PORTC=0b00011110;
+		_delay_ms(2);
+		PORTB++;
+		PORTC=0b00100001;
+		_delay_ms(2);
+		PORTB++;
+		PORTC=0b00100001;
+		_delay_ms(2);
+		PORTB++;
+		PORTC=0b00111001;
+		_delay_ms(2);
+		PORTB++;
+		PORTC=0b00001010;
+		_delay_ms(2);
+		PORTB++;
+		PORTC=0b00111000;
+		_delay_ms(2);
+		PORTB++;
+		PORTC=0b00000000;
+		_delay_ms(2);
+	}
+
+}
+void alphaH()
+{
+	for(i=0;i<180;i++)
+	{
+		PORTB=0x00;
+		PORTC=0b00000000;
+		_delay_ms(2);
+		PORTB++;
+		PORTC=0b00111111;
+		_delay_ms(2);
+		PORTB++;
+		PORTC=0b00000100;
+		_delay_ms(2);
+		PORTB++;
+		PORTC=0b00000100;
+		_delay_ms(2);
+		PORTB++;
+		PORTC=0b00000100;
+		_delay_ms(2);
+		PORTB++;
+		PORTC=0b00111111;
+		_delay_ms(2);
+		PORTB++;
+		PORTC=0b00000000;
+		_delay_ms(2);
+		PORTB++;
+		PORTC=0b00000000;
+		_delay_ms(2);
+	}
+}
+void alphaI()
+{
+	for(i=0;i<180;i++)
+	{
+		PORTB=0x00;
+		PORTC=0b00100001;
+		_delay_ms(2);
+		PORTB++;
+		PORTC=0b00100001;
+		_delay_ms(2);
+		PORTB++;
+		PORTC=0b00100001;
+		_delay_ms(2);
+		PORTB++;
+		PORTC=0b00111111;
+		_delay_ms(2);
+		PORTB++;
+		PORTC=0b00100001;
+		_delay_ms(2);
+		PORTB++;
+		PORTC=0b00100001;
+		_delay_ms(2);
+		PORTB++;
+		PORTC=0b00100001;
+		_delay_ms(2);
+		PORTB++;
+		PORTC=0b00000000;
+		_delay_ms(2);
+	}
+}
+void alphaJ()
+{
+	for(i=0;i<180;i++)
+	{
+		PORTB=0x00;
+		PORTC=0b00001001;
+		_delay_ms(2);
+		PORTB++;
+		PORTC=0b00010001;
+		_delay_ms(2);
+		PORTB++;
+		PORTC=0b00100001;
+		_delay_ms(2);
+		PORTB++;
+		PORTC=0b00100001;
+		_delay_ms(2);
+		PORTB++;
+		PORTC=0b00011111;
+		_delay_ms(2);
+		PORTB++;
+		PORTC=0b00000001;
+		_delay_ms(2);
+		PORTB++;
+		PORTC=0b00000001;
+		_delay_ms(2);
+		PORTB++;
+		PORTC=0b00000001;
+		_delay_ms(2);
+	}
+}
+void alphaK()
+{
+	for(i=0;i<180;i++)
+	{
+		PORTB=0x00;
+		PORTC=0b00000000;
+		_delay_ms(2);
+		PORTB++;
+		PORTC=0b00111111;
+		_delay_ms(2);
+		PORTB++;
+		PORTC=0b00001100;
+		_delay_ms(2);
+		PORTB++;
+		PORTC=0b00010010;
+		_delay_ms(2);
+		PORTB++;
+		PORTC=0b00100001;
+		_delay_ms(2);
+		PORTB++;
+		PORTC=0b00100001;
+		_delay_ms(2);
+		PORTB++;
+		PORTC=0b00000000;
+		_delay_ms(2);
+		PORTB++;
+		PORTC=0b00000000;
+		_delay_ms(2);
+	}
+}
+void alphaL()
+{
+	for(i=0;i<180;i++)
+	{
+		PORTB=0x00;
+		PORTC=0b00000000;
+		_delay_ms(2);
+		PORTB++;
+		PORTC=0b00111111;
+		_delay_ms(2);
+		PORTB++;
+		PORTC=0b00100000;
+		_delay_ms(2);
+		PORTB++;
+		PORTC=0b00100000;
+		_delay_ms(2);
+		PORTB++;
+		PORTC=0b00100000;
+		_delay_ms(2);
+		PORTB++;
+		PORTC=0b00100000;
+		_delay_ms(2);
+		PORTB++;
+		PORTC=0b00100000;
+		_delay_ms(2);
+		PORTB++;
+		PORTC=0b00000000;
+		_delay_ms(2);
+	}
+}
+void alphaM()
+{
+	for(i=0;i<180;i++)
+	{
+		PORTB=0x00;
+		PORTC=0b00111111;
+		_delay_ms(2);
+		PORTB++;
+		PORTC=0b00000010;
+		_delay_ms(2);
+		PORTB++;
+		PORTC=0b00000100;
+		_delay_ms(2);
+		PORTB++;
+		PORTC=0b00001000;
+		_delay_ms(2);
+		PORTB++;
+		PORTC=0b00000100;
+		_delay_ms(2);
+		PORTB++;
+		PORTC=0b00000010;
+		_delay_ms(2);
+		PORTB++;
+		PORTC=0b00111111;
+		_delay_ms(2);
+		PORTB++;
+		PORTC=0b00000000;
+		_delay_ms(2);
+	}
+}
+void alphaN()
+{
+	for(i=0;i<180;i++)
+	{
+		PORTB=0x00;
+		PORTC=0b00000000;
+		_delay_ms(2);
+		PORTB++;
+		PORTC=0b001111111;
+		_delay_ms(2);
+		PORTB++;
+		PORTC=0b00000010;
+		_delay_ms(2);
+		PORTB++;
+		PORTC=0b00000100;
+		_delay_ms(2);
+		PORTB++;
+		PORTC=0b00001000;
+		_delay_ms(2);
+		PORTB++;
+		PORTC=0b00010000;
+		_delay_ms(2);
+		PORTB++;
+		PORTC=0b00111111;
+		_delay_ms(2);
+		PORTB++;
+		PORTC=0b00000000;
+		_delay_ms(2);
+	}
+}
+void alphaO()
+{
+	for(i=0;i<180;i++)
+	{
+		PORTB=0x00;
+		PORTC=0b00000000;
+		_delay_ms(2);
+		PORTB++;
+		PORTC=0b00011110;
+		_delay_ms(2);
+		PORTB++;
+		PORTC=0b00100001;
+		_delay_ms(2);
+		PORTB++;
+		PORTC=0b00100001;
+		_delay_ms(2);
+		PORTB++;
+		PORTC=0b00100001;
+		_delay_ms(2);
+		PORTB++;
+		PORTC=0b00100001;
+		_delay_ms(2);
+		PORTB++;
+		PORTC=0b00011110;
+		_delay_ms(2);
+		PORTB++;
+		PORTC=0b00000000;
+		_delay_ms(2);
+	}
+}
+void alphaP()
+{
+	for(i=0;i<180;i++)
+	{
+		PORTB=0x00;
+		PORTC=0b00000000;
+		_delay_ms(2);
+		PORTB++;
+		PORTC=0b00111110;
+		_delay_ms(2);
+		PORTB++;
+		PORTC=0b00001001;
+		_delay_ms(2);
+		PORTB++;
+		PORTC=0b00001001;
+		_delay_ms(2);
+		PORTB++;
+		PORTC=0b00001001;
+		_delay_ms(2);
+		PORTB++;
+		PORTC=0b00000110;
+		_delay_ms(2);
+		PORTB++;
+		PORTC=0b00000000;
+		_delay_ms(2);
+		PORTB++;
+		PORTC=0b00000000;
+		_delay_ms(2);
+	}
+}
+void alphaQ()
+{
+	for(i=0;i<180;i++)
+	{
+		PORTB=0x00;
+		PORTC=0b00011110;
+		_delay_ms(2);
+		PORTB++;
+		PORTC=0b00110001;
+		_delay_ms(2);
+		PORTB++;
+		PORTC=0b00101001;
+		_delay_ms(2);
+		PORTB++;
+		PORTC=0b00101001;
+		_delay_ms(2);
+		PORTB++;
+		PORTC=0b00011110;
+		_delay_ms(2);
+		PORTB++;
+		PORTC=0b00110000;
+		_delay_ms(2);
+		PORTB++;
+		PORTC=0b00000000;
+		_delay_ms(2);
+		PORTC=0b00000000;
+		_delay_ms(2);
+	}
+}
+void alphaR()
+{
+	for(i=0;i<180;i++)
+	{
+		PORTB=0x00;
+		PORTC=0b00000000;
+		_delay_ms(2);
+		PORTB++;
+		PORTC=0b00000000;
+		_delay_ms(2);
+		PORTB++;
+		PORTC=0b00111111;
+		_delay_ms(2);
+		PORTB++;
+		PORTC=0b00001001;
+		_delay_ms(2);
+		PORTB++;
+		PORTC=0b00011001;
+		_delay_ms(2);
+		PORTB++;
+		PORTC=0b00100110;
+		_delay_ms(2);
+		PORTB++;
+		PORTC=0b00000000;
+		_delay_ms(2);
+		PORTB++;
+		PORTC=0b00000000;
+		_delay_ms(2);
+	}
+}
+void alphaS()
+{
+	for(i=0;i<180;i++)
+	{
+		PORTB=0x00;
+		PORTC=0b00000000;
+		_delay_ms(2);
+		PORTB++;
+		PORTC=0b00000000;
+		_delay_ms(2);
+		PORTB++;
+		PORTC=0b00100110;
+		_delay_ms(2);
+		PORTB++;
+		PORTC=0b00101001;
+		_delay_ms(2);
+		PORTB++;
+		PORTC=0b00101001;
+		_delay_ms(2);
+		PORTB++;
+		PORTC=0b00010001;
+		_delay_ms(2);
+		PORTB++;
+		PORTC=0b00000000;
+		_delay_ms(2);
+		PORTB++;
+		PORTC=0b00000000;
+		_delay_ms(2);
+	}
+}
+void alphaT()
+{
+	for(i=0;i<180;i++)
+	{
+		PORTB=0x00;
+		PORTC=0b00000001;
+		_delay_ms(2);
+		PORTB++;
+		PORTC=0b00000001;
+		_delay_ms(2);
+		PORTB++;
+		PORTC=0b00000001;
+		_delay_ms(2);
+		PORTB++;
+		PORTC=0b00111111;
+		_delay_ms(2);
+		PORTB++;
+		PORTC=0b00000001;
+		_delay_ms(2);
+		PORTB++;
+		PORTC=0b00000001;
+		_delay_ms(2);
+		PORTB++;
+		PORTC=0b00000001;
+		_delay_ms(2);
+		PORTB++;
+		PORTC=0b00000000;
+		_delay_ms(2);
+	}
+}
+void alphaU()
+{
+	for(i=0;i<180;i++)
+	{
+		PORTB=0x00;
+		PORTC=0b00000000;
+		_delay_ms(2);
+		PORTB++;
+		PORTC=0b00011111;
+		_delay_ms(2);
+		PORTB++;
+		PORTC=0b00100000;
+		_delay_ms(2);
+		PORTB++;
+		PORTC=0b00100000;
+		_delay_ms(2);
+		PORTB++;
+		PORTC=0b00100000;
+		_delay_ms(2);
+		PORTB++;
+		PORTC=0b00100000;
+		_delay_ms(2);
+		PORTB++;
+		PORTC=0b00011111;
+		_delay_ms(2);
+		PORTB++;
+		PORTC=0b00000000;
+		_delay_ms(2);
+	}
+}
+void alphaV()
+{
+	for(i=0;i<180;i++)
+	{
+		PORTB=0x00;
+		PORTC=0b00000011;
+		_delay_ms(2);
+		PORTB++;
+		PORTC=0b00001100;
+		_delay_ms(2);
+		PORTB++;
+		PORTC=0b00010000;
+		_delay_ms(2);
+		PORTB++;
+		PORTC=0b00100000;
+		_delay_ms(2);
+		PORTB++;
+		PORTC=0b00010000;
+		_delay_ms(2);
+		PORTB++;
+		PORTC=0b00001100;
+		_delay_ms(2);
+		PORTB++;
+		PORTC=0b000000011;
+		_delay_ms(2);
+		PORTB++;
+		PORTC=0b00000000;
+		_delay_ms(2);
+	}
+}
+void alphaW()
+{
+	for(i=0;i<180;i++)
+	{
+		PORTB=0x00;
+		PORTC=0b00111111;
+		_delay_ms(2);
+		PORTB++;
+		PORTC=0b00100000;
+		_delay_ms(2);
+		PORTB++;
+		PORTC=0b00010000;
+		_delay_ms(2);
+		PORTB++;
+		PORTC=0b00001000;
+		_delay_ms(2);
+		PORTB++;
+		PORTC=0b00010000;
+		_delay_ms(2);
+		PORTB++;
+		PORTC=0b00100000;
+		_delay_ms(2);
+		PORTB++;
+		PORTC=0b00111111;
+		_delay_ms(2);
+		PORTB++;
+		PORTC=0b00000000;
+		_delay_ms(2);
+	}
+}
+void alphaX()
+{
+	for(i=0;i<180;i++)
+	{
+		PORTB=0x00;
+		PORTC=0b00000000;
+		_delay_ms(2);
+		PORTB++;
+		PORTC=0b00100001;
+		_delay_ms(2);
+		PORTB++;
+		PORTC=0b00010010;
+		_delay_ms(2);
+		PORTB++;
+		PORTC=0b00001100;
+		_delay_ms(2);
+		PORTB++;
+		PORTC=0b00001100;
+		_delay_ms(2);
+		PORTB++;
+		PORTC=0b00010010;
+		_delay_ms(2);
+		PORTB++;
+		PORTC=0b00100001;
+		_delay_ms(2);
+		PORTB++;
+		PORTC=0b00000000;
+		_delay_ms(2);
+	}
+}
+void alphaY()
+{
+	for(i=0;i<180;i++)
+	{
+		PORTB=0x00;
+		PORTC=0b00000001;
+		_delay_ms(2);
+		PORTB++;
+		PORTC=0b00000010;
+		_delay_ms(2);
+		PORTB++;
+		PORTC=0b00000100;
+		_delay_ms(2);
+		PORTB++;
+		PORTC=0b00111000;
+		_delay_ms(2);
+		PORTB++;
+		PORTC=0b00000100;
+		_delay_ms(2);
+		PORTB++;
+		PORTC=0b00000010;
+		_delay_ms(2);
+		PORTB++;
+		PORTC=0b00000001;
+		_delay_ms(2);
+		PORTB++;
+		PORTC=0b00000000;
+		_delay_ms(2);
+	}
+}
+void alphaZ()
+{
+	for(i=0;i<180;i++)
+	{
+		PORTB=0x00;
+		PORTC=0b00000000;
+		_delay_ms(2);
+		PORTB++;
+		PORTC=0b00100001;
+		_delay_ms(2);
+		PORTB++;
+		PORTC=0b00110001;
+		_delay_ms(2);
+		PORTB++;
+		PORTC=0b00101001;
+		_delay_ms(2);
+		PORTB++;
+		PORTC=0b00100101;
+		_delay_ms(2);
+		PORTB++;
+		PORTC=0b00100011;
+		_delay_ms(2);
+		PORTB++;
+		PORTC=0b00100001;
+		_delay_ms(2);
+		PORTB++;
+		PORTC=0b00000000;
+		_delay_ms(2);
+	}
+}
+void blank()
+{
+	for(i=0;i<180;i++)
+	{
+		PORTB=0x00;
+		PORTC=0b00000000;
+		_delay_ms(2);
+		PORTB++;
+		PORTC=0b00000000;
+		_delay_ms(2);
+		PORTB++;
+		PORTC=0b00000000;
+		_delay_ms(2);
+		PORTB++;
+		PORTC=0b00000000;
+		_delay_ms(2);
+		PORTB++;
+		PORTC=0b00000000;
+		_delay_ms(2);
+		PORTB++;
+		PORTC=0b00000000;
+		_delay_ms(2);
+		PORTB++;
+		PORTC=0b00000000;
+		_delay_ms(2);
+		PORTB++;
+		PORTC=0b00000000;
+		_delay_ms(2);
+	}
+}
+
+void num0()
+{
+	for(i=0;i<180;i++)
+	{
+		PORTB=0x00;
+		PORTC=0b00000000;
+		_delay_ms(2);
+		PORTB++;
+		PORTC=0b00000000;
+		_delay_ms(2);
+		PORTB++;
+		PORTC=0b00011110;
+		_delay_ms(2);
+		PORTB++;
+		PORTC=0b00100001;
+		_delay_ms(2);
+		PORTB++;
+		PORTC=0b00100001;
+		_delay_ms(2);
+		PORTB++;
+		PORTC=0b00011110;
+		_delay_ms(2);
+		PORTB++;
+		PORTC=0b00000000;
+		_delay_ms(2);
+		PORTB++;
+		PORTC=0b00000000;
+		_delay_ms(2);
+	}
+}
+
+
+void num1()
+{
+	for(i=0;i<180;i++)
+	{
+		PORTB=0x00;
+		PORTC=0b00000000;
+		_delay_ms(2);
+		PORTB++;
+		PORTC=0b00100100;
+		_delay_ms(2);
+		PORTB++;
+		PORTC=0b00100010;
+		_delay_ms(2);
+		PORTB++;
+		PORTC=0b00100001;
+		_delay_ms(2);
+		PORTB++;
+		PORTC=0b00111111;
+		_delay_ms(2);
+		PORTB++;
+		PORTC=0b00100000;
+		_delay_ms(2);
+		PORTB++;
+		PORTC=0b00100000;
+		_delay_ms(2);
+		PORTB++;
+		PORTC=0b00000000;
+		_delay_ms(2);
+	}
+}
+
+
+void num2()
+{
+	for(i=0;i<180;i++)
+	{
+		PORTB=0x00;
+		PORTC=0b00000000;
+		_delay_ms(2);
+		PORTB++;
+		PORTC=0b00100110;
+		_delay_ms(2);
+		PORTB++;
+		PORTC=0b00110001;
+		_delay_ms(2);
+		PORTB++;
+		PORTC=0b00101001;
+		_delay_ms(2);
+		PORTB++;
+		PORTC=0b00100101;
+		_delay_ms(2);
+		PORTB++;
+		PORTC=0b00100010;
+		_delay_ms(2);
+		PORTB++;
+		PORTC=0b00100000;
+		_delay_ms(2);
+		PORTB++;
+		PORTC=0b00000000;
+		_delay_ms(2);
+	}
+}
+
+void num3()
+{
+	for(i=0;i<180;i++)
+	{
+		PORTB=0x00;
+		PORTC=0b00000000;
+		_delay_ms(2);
+		PORTB++;
+		PORTC=0b00010001;
+		_delay_ms(2);
+		PORTB++;
+		PORTC=0b00100001;
+		_delay_ms(2);
+		PORTB++;
+		PORTC=0b00100101;
+		_delay_ms(2);
+		PORTB++;
+		PORTC=0b00101011;
+		_delay_ms(2);
+		PORTB++;
+		PORTC=0b00010001;
+		_delay_ms(2);
+		PORTB++;
+		PORTC=0b00000000;
+		_delay_ms(2);
+		PORTB++;
+		PORTC=0b00000000;
+		_delay_ms(2);
+	}
+}
+void num4()
+{
+	for(i=0;i<180;i++)
+	{
+		PORTB=0x00;
+		PORTC=0b00000000;
+		_delay_ms(2);
+		PORTB++;
+		PORTC=0b00001000;
+		_delay_ms(2);
+		PORTB++;
+		PORTC=0b00001100;
+		_delay_ms(2);
+		PORTB++;
+		PORTC=0b00001010;
+		_delay_ms(2);
+		PORTB++;
+		PORTC=0b00111111;
+		_delay_ms(2);
+		PORTB++;
+		PORTC=0b00001000;
+		_delay_ms(2);
+		PORTB++;
+		PORTC=0b00001000;
+		_delay_ms(2);
+		PORTB++;
+		PORTC=0b00000000;
+		_delay_ms(2);
+	}
+}
+void num5()
+{
+	for(i=0;i<180;i++)
+	{
+		PORTB=0x00;
+		PORTC=0b00000000;
+		_delay_ms(2);
+		PORTB++;
+		PORTC=0b00000000;
+		_delay_ms(2);
+		PORTB++;
+		PORTC=0b00100111;
+		_delay_ms(2);
+		PORTB++;
+		PORTC=0b00100101;
+		_delay_ms(2);
+		PORTB++;
+		PORTC=0b00100101;
+		_delay_ms(2);
+		PORTB++;
+		PORTC=0b00011001;
+		_delay_ms(2);
+		PORTB++;
+		PORTC=0b00000000;
+		_delay_ms(2);
+		PORTB++;
+		PORTC=0b00000000;
+		_delay_ms(2);
+	}
+}
+void num6()
+{
+	for(i=0;i<180;i++)
+	{
+		PORTB=0x00;
+		PORTC=0b00000000;
+		_delay_ms(2);
+		PORTB++;
+		PORTC=0b00011110;
+		_delay_ms(2);
+		PORTB++;
+		PORTC=0b00100101;
+		_delay_ms(2);
+		PORTB++;
+		PORTC=0b00100101;
+		_delay_ms(2);
+		PORTB++;
+		PORTC=0b00100101;
+		_delay_ms(2);
+		PORTB++;
+		PORTC=0b00011001;
+		_delay_ms(2);
+		PORTB++;
+		PORTC=0b00000000;
+		_delay_ms(2);
+		PORTB++;
+		PORTC=0b00000000;
+		_delay_ms(2);
+	}
+}
+void num7()
+{
+	for(i=0;i<180;i++)
+	{
+		PORTB=0x00;
+		PORTC=0b00000000;
+		_delay_ms(2);
+		PORTB++;
+		PORTC=0b00000001;
+		_delay_ms(2);
+		PORTB++;
+		PORTC=0b00100001;
+		_delay_ms(2);
+		PORTB++;
+		PORTC=0b00010001;
+		_delay_ms(2);
+		PORTB++;
+		PORTC=0b00001001;
+		_delay_ms(2);
+		PORTB++;
+		PORTC=0b00000101;
+		_delay_ms(2);
+		PORTB++;
+		PORTC=0b00000011;
+		_delay_ms(2);
+		PORTB++;
+		PORTC=0b00000000;
+		_delay_ms(2);
+	}
+}
+void num8()
+{
+	for(i=0;i<180;i++)
+	{
+		PORTB=0x00;
+		PORTC=0b00000000;
+		_delay_ms(2);
+		PORTB++;
+		PORTC=0b00011010;
+		_delay_ms(2);
+		PORTB++;
+		PORTC=0b00100101;
+		_delay_ms(2);
+		PORTB++;
+		PORTC=0b00100101;
+		_delay_ms(2);
+		PORTB++;
+		PORTC=0b00100101;
+		_delay_ms(2);
+		PORTB++;
+		PORTC=0b00011010;
+		_delay_ms(2);
+		PORTB++;
+		PORTC=0b00000000;
+		_delay_ms(2);
+		PORTB++;
+		PORTC=0b00000000;
+		_delay_ms(2);
+	}
+}
+void num9()
+{
+	for(i=0;i<180;i++)
+	{
+		PORTB=0x00;
+		PORTC=0b00000000;
+		_delay_ms(2);
+		PORTB++;
+		PORTC=0b00100110;
+		_delay_ms(2);
+		PORTB++;
+		PORTC=0b00101001;
+		_delay_ms(2);
+		PORTB++;
+		PORTC=0b00101001;
+		_delay_ms(2);
+		PORTB++;
+		PORTC=0b00101001;
+		_delay_ms(2);
+		PORTB++;
+		PORTC=0b00011110;
+		_delay_ms(2);
+		PORTB++;
+		PORTC=0b00000000;
+		_delay_ms(2);
+		PORTB++;
+		PORTC=0b00000000;
+		_delay_ms(2);
+	}
+}
+void full()
+{
+	for(i=0;i<180;i++)
+	{
+		PORTB=0x00;
+		PORTC=0xff;
+		_delay_ms(2);
+		PORTB++;
+		PORTC=0xff;
+		_delay_ms(2);
+		PORTB++;
+		PORTC=0xff;
+		_delay_ms(2);
+		PORTB++;
+		PORTC=0xff;
+		_delay_ms(2);
+		PORTB++;
+		PORTC=0xff;
+		_delay_ms(2);
+		PORTB++;
+		PORTC=0xff;
+		_delay_ms(2);
+		PORTB++;
+		PORTC=0xff;
+		_delay_ms(2);
+		PORTB++;
+		PORTC=0xff;
+		_delay_ms(2);
+	}
+}
+void love()
+{
+	for(i=0;i<180;i++)
+	{
+		PORTB=0x00;
+		PORTC=0b00000110;
+		_delay_ms(2);
+		PORTB++;
+		PORTC=0b00001001;
+		_delay_ms(2);
+		PORTB++;
+		PORTC=0b00010010;
+		_delay_ms(2);
+		PORTB++;
+		PORTC=0b00100100;
+		_delay_ms(2);
+		PORTB++;
+		PORTC=0b00010010;
+		_delay_ms(2);
+		PORTB++;
+		PORTC=0b00001001;
+		_delay_ms(2);
+		PORTB++;
+		PORTC=0b000000110;
+		_delay_ms(2);
+		PORTB++;
+		PORTC=0b00000000;
+	_delay_ms(2);	}
+}
+
+void trans()
+{
+	for(i=0;i<180;i++)
+	{
+		PORTB=0x00;
+		PORTC=0b00000101;
+		_delay_ms(2);
+		PORTB++;
+		PORTC=0b00000110;
+		_delay_ms(2);
+		PORTB++;
+		PORTC=0b00000100;
+		_delay_ms(2);
+		PORTB++;
+		PORTC=0b00011100;
+		_delay_ms(2);
+		PORTB++;
+		PORTC=0b00000100;
+		_delay_ms(2);
+		PORTB++;
+		PORTC=0b00000110;
+		_delay_ms(2);
+		PORTB++;
+		PORTC=0b00000101;
+		_delay_ms(2);
+		PORTB++;
+		PORTC=0b00000000;
+	_delay_ms(2);	}
+}
+void diode()
+{
+	for(i=0;i<180;i++)
+	{
+		PORTB=0x00;
+		PORTC=0b00000000;
+		_delay_ms(2);
+		PORTB++;
+		PORTC=0b00000100;
+		_delay_ms(2);
+		PORTB++;
+		PORTC=0b00011111;
+		_delay_ms(2);
+		PORTB++;
+		PORTC=0b00001010;
+		_delay_ms(2);
+		PORTB++;
+		PORTC=0b00000100;
+		_delay_ms(2);
+		PORTB++;
+		PORTC=0b00011111;
+		_delay_ms(2);
+		PORTB++;
+		PORTC=0b00000100;
+		_delay_ms(2);
+		PORTB++;
+		PORTC=0b0000000;
+		_delay_ms(2);
+		
+	}
+}
+
+
+int main(void)
+{
+	
+	//char RD;
+	
+	DDRB = 0b11111111;
+	DDRC = 0b1111111;
+	//USART_Init(51);
+	//USART_InterruptEnable();
+	while(1)
+	{ 
+		alphaA();
+		alphaB();
+		//RD=USART_Receive();
+		/*if(RD=='A' || RD=='a')
+		{
+			alphaA();
+		}
+		else if(RD=='B' || RD=='b')
+		{
+			alphaB();
+		}
+		else if(RD=='C' || RD=='c')
+		{
+			alphaC();
+		}
+		else if(RD=='D' || RD=='d')
+		{
+			alphaD();
+		}
+		else if(RD=='E' || RD=='e')
+		{
+			alphaE();
+		}
+		else if(RD=='F' || RD=='f')
+		{
+			alphaF();
+		}
+		else if(RD=='G' || RD=='g')
+		{
+			alphaG();
+		}
+		else if(RD=='H' || RD=='h')
+		{
+			alphaH();
+		}
+		else if(RD=='I' || RD=='i')
+		{
+			alphaI();
+		}
+		else if(RD=='J' || RD=='j')
+		{
+			alphaJ();
+		}
+		else if(RD=='K' || RD=='k')
+		{
+			alphaK();
+		}
+		else if(RD=='L' || RD=='l')
+		{
+			alphaL();
+		}
+		else if(RD=='M' || RD=='m')
+		{
+			alphaM();
+		}
+		else if(RD=='N' || RD=='n')
+		{
+			alphaN();
+		}
+		else if(RD=='o' || RD=='O')
+		{
+			alphaO();
+		}
+		else if(RD=='P' || RD=='p')
+		{
+			alphaP();
+		}
+		else if(RD=='Q' || RD=='q')
+		{
+			alphaQ();
+		}
+		else if(RD=='R' || RD=='r')
+		{
+			alphaR();
+		}
+		else if(RD=='s' || RD=='S')
+		{
+			alphaS();
+		}
+		else if(RD=='T' || RD=='t')
+		{
+			alphaT();
+		}
+		else if(RD=='U' || RD=='u')
+		{
+			alphaU();
+		}
+		else if(RD=='V' || RD=='v')
+		{
+			alphaV();
+		}
+		else if(RD=='W' || RD=='w')
+		{
+			alphaW();
+		}
+		else if(RD=='X' || RD=='x')
+		{
+			alphaX();
+		}
+		else if(RD=='Y' || RD=='y')
+		{
+			alphaY();
+		}
+		else if(RD=='z' || RD=='Z')
+		{
+			alphaZ();
+		}
+		else if(RD=='=' || RD=='<')
+		{
+			diode();
+		}
+		else if(RD=='/' || RD=='>')
+		{
+			trans();
+		}
+		else if(RD=='-' || RD=='+')
+		{
+			love();
+		}
+		else if(RD=='0')
+		{
+			num0();
+		}
+		else if(RD=='1')
+		{
+			num1();
+		}
+		else if(RD=='2')
+		{
+			num2();
+		}
+		else if(RD=='3')
+		{
+			num3();
+		}
+		else if(RD=='4')
+		{
+			num4();
+		}
+		else if(RD=='5')
+		{
+			num5();
+		}
+		else if(RD=='6')
+		{
+			num6();
+		}
+		else if(RD=='7')
+		{
+			num7();
+		}
+		else if(RD=='8')
+		{
+			num8();
+		}
+		else if(RD=='9')
+		{
+			num9();
+		}
+		else
+		{
+			full();
+		}*/
+		
+		
+	}
+}
